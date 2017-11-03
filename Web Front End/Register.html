@@ -222,22 +222,38 @@ function submitUsername_Password(){
 
 	};
 
-	
 
+if(email!=""&&user!="" && pass!="")
+{
   
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))  
-  {  
+	if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))  
+  	{
+  		if (user=="" && pass=="")
+  		{
+  		alert("Need Username and Password");
+  		}
+  		else
+  		{
+  		console.log(registration_data);
+  		}  
+       
+      
+  	}  
+  	else
+  	{
+    alert("You have entered an invalid email address!");  
     
-    console.log(registration_data);  
-  }  
-   else
-   {
-    alert("You have entered an invalid email address!")  
-    return (false)  
-	} 
+  	} 
 		
+ 
 }
+else
+{
 
+	alert("All fields are required!");
+	return(false);
+}
+}
 
 
 </script>
