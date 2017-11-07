@@ -2,8 +2,6 @@
 <html>
 <head>
 <style type="text/css">
-
-
 #title{
 	color: black;
 	position: fixed;
@@ -12,40 +10,30 @@
 	
 	}
 #email{
-
 	position:fixed;
 	left:555px;
 	top:230px;
 	border-radius: 5px;
 	height: 35px;
 	width:285px;
-
-
 } 
 #username{
-
 	position:fixed;
 	left:555px;
 	top:280px;
 	border-radius: 5px;
 	height: 35px;
 	width:285px;
-
-
 } 
 #password{
-
 	position:fixed;
 	left:555px;
 	top:330px;
 	border-radius: 5px;
 	height: 35px;
 	width:285px;
-
-
 } 
 #submit{
-
 	position:fixed;
 	left:640px;
 	top:377px;
@@ -59,54 +47,36 @@
 } 
 #submit:hover{
 background-color: white;
-
 }
-
-
 #window{
 	position:fixed;
 	left:1230px;
 	top: 540px;
-
-
 }
 #border1{
-
 width:1333px;
 height:628px;
 background-color: none;
 border-style: solid;
 border-radius:12px;
-
 border-width: 30px;
 border-color:grey;
 position:fixed;
 left:-12px;
 top:-12px;
-
-
-
 }
-
 #pharm_logo{
-
 	position:fixed;
 	top:10px;
 	left:548px;
-
 }
-
-
 #login{
-
 position:fixed;
 left:674px;
 top:432px;
 text-decoration: underline;
-
 }
 #slanted{
-
 background-color:red;
 height:400px;
 width:1342px;
@@ -114,8 +84,6 @@ position:fixed;
 top:-230px;
 left:12px;
 transform: skewY(5deg); 
-
-
 }
 #navbar{
 position:absolute;
@@ -127,8 +95,6 @@ list-style-type: none;
     padding: 0;
     width: 200px;
     background-color: #f1f1f1;
-
-
 }
 .nav {
     display: block;
@@ -139,8 +105,6 @@ list-style-type: none;
     border-style: solid;
     border-color: black;
 }
-
-
 .nav:hover {
     background-color: #555;
     color: white;
@@ -149,12 +113,6 @@ list-style-type: none;
 	background-color: #555;
 	color:white;
 }
-
-
-
-
-
-
 </style>
 
 
@@ -207,22 +165,17 @@ list-style-type: none;
 
 
 <script type="text/javascript">
-
 function submitUsername_Password(){
+	// var database= firebase.dataase();
+	//var ref=database.ref('Registration_Info');
 	var email= document.getElementById("email").value
 	var user = document.getElementById("username").value;
 	var pass = document.getElementById("password").value;
-
-
 	var registration_data= {
-
 		Email : email,
 		Username: user,
 		Password: pass
-
 	};
-
-
 if(email!=""&&user!="" && pass!="")
 {
   
@@ -235,6 +188,8 @@ if(email!=""&&user!="" && pass!="")
   		else
   		{
   		console.log(registration_data);
+  		//ref.push(registration_data);
+
   		}  
        
       
@@ -249,13 +204,10 @@ if(email!=""&&user!="" && pass!="")
 }
 else
 {
-
 	alert("All fields are required!");
 	return(false);
 }
 }
-
-
 </script>
 
 
