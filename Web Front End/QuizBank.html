@@ -303,13 +303,37 @@ background-color: white;
 
 <script type="text/javascript">
 
-
 function addQuiz(){
+
+
+
 	var x = document.getElementById("QuizList");
 	var name=document.getElementById("inputQuiz").value;
 	 var option = document.createElement("option");
 	 option.text = name;
-	 x.add(option);
+	 if(name!=""){
+
+	 		var quiz_name={
+
+	 	name: name
+
+	 };
+	 	x.appendChild(option);
+	 	console.log(quiz_name);
+	 }
+	 else{
+
+	 	alert("Must Enter the Quiz Name!");
+	 }
+	 
+
+
+
+	// var database= firebase.dataase();
+	//var ref=database.ref('Quiz_List');
+	//ref.push(quiz_name);
+
+	 
 
 
 }
@@ -367,3 +391,4 @@ function logout() {
 
 
 </html>
+
