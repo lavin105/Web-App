@@ -161,6 +161,104 @@ width: 100px;
 background-color: white;
 
 }
+#QuestionList{
+
+	position:fixed;
+	left:50px;
+	top:280px;
+	width:450px;
+	height: 200px;
+	border-radius: 3px;
+	border-width:4px;
+
+
+}
+.quest{
+
+	font-size: 125%;
+	border-style: solid;
+	border-width:1px;
+}
+option{
+
+	font-size: 125%;
+	border-style: solid;
+	border-width:1px;
+
+}
+#existing_questions{
+position: fixed;
+top: 220px;
+left: 160px;
+
+}
+#addAQuestion{
+position: fixed;
+top: 240px;
+left: 780px;
+
+}
+#Edit{
+
+	position:fixed;
+	left:320px;
+	top:505px;
+	width: 104px;
+	height: 43px;
+	border-radius: 14px;
+	border-color: red;
+	background-color: red;
+	font-family: "Lucida Console", Monaco, monospace;
+	font-weight: bold;
+} 
+#Edit:hover{
+background-color: white;
+
+}
+#Delete{
+
+	position:fixed;
+	left:110px;
+	top:505px;
+	width: 104px;
+	height: 43px;
+	border-radius: 14px;
+	border-color: red;
+	background-color: red;
+	font-family: "Lucida Console", Monaco, monospace;
+	font-weight: bold;
+} 
+#Delete:hover{
+background-color: white;
+
+}
+#Add{
+
+	position:fixed;
+	left:810px;
+	top:355px;
+	width: 104px;
+	height: 43px;
+	border-radius: 14px;
+	border-color: red;
+	background-color: red;
+	font-family: "Lucida Console", Monaco, monospace;
+	font-weight: bold;
+} 
+#Add:hover{
+background-color: white;
+
+}
+#addQuest{
+position:absolute;
+	top:300px;
+	left:630px;
+	border-radius: 5px;
+	height: 35px;
+	width:485px;
+
+
+}
 
 
 
@@ -180,8 +278,27 @@ background-color: white;
 <div id="slanted"></div>
 <img id="window" src="finestra_window.png">
 <div id="border1"></div>
-<h1 id= "Title">Question Bank</h1>
+<h1 id= "Title">Quiz Name</h1>
 <img id="pharm_logo" src="CU_pharm.png">
+
+<h2 id="existing_questions">Existing Questions</h2>
+<h2 id="addAQuestion">Add a Question</h2>
+
+<button id="Edit" onclick="editQuestion()">Edit</button>
+<button id="Delete" onclick="deleteQuestion()">Delete</button>
+<button id="Add" onclick="addQuestion()">Add</button>
+
+<select id="QuestionList" size="9">
+  <option class="quest" >Question 1</option>
+  <option class="quest" >Question 2</option>
+  <option class="quest" >Question 3</option>
+  <option class="quest" >Question 4</option>
+  <option class="quest" >Question 5</option>
+</select>
+
+
+<input id="addQuest" type="text" name="Quiz" placeholder="Quiz Name"></input>
+
 
 
 
@@ -211,6 +328,99 @@ background-color: white;
 
 
 <script type="text/javascript">
+
+function deleteQuestion(){
+var r = confirm("Are you sure you want to delete this question?");
+    if (r == true) {
+        var x = document.getElementById("QuestionList");
+    x.remove(x.selectedIndex);
+    } else {
+        return false
+    }
+
+
+
+
+
+
+
+
+}
+
+
+function editQuestion(){
+
+
+ var change = prompt("What would you like to change the question to?", "");
+    if (change != null) {
+        var x = document.getElementById("QuestionList");
+        x.remove(x.selectedIndex);
+        var option = document.createElement("option");
+	 	option.text = change;
+	 	x.appendChild(option);
+
+        
+    }
+
+
+
+
+}
+
+
+function addQuestion(){
+
+var x = document.getElementById("QuestionList");
+	var name=document.getElementById("addQuest").value;
+	 var option = document.createElement("option");
+	 option.text = name;
+	 if(name!=""){
+
+	 		var question_name={
+
+	 	name: name
+
+	 };
+	 	x.appendChild(option);
+	 	console.log(question_name);
+	 	
+
+	 }
+	 else{
+
+	 	alert("Must Enter the Question!");
+	 }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function toQuizQuestions(){
 
 location.href="QuestionBank.html";
