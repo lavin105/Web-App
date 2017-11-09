@@ -273,12 +273,12 @@ position:absolute;
 
 
 
-<body>
+<body onload="load()">
 
 <div id="slanted"></div>
 <img id="window" src="finestra_window.png">
 <div id="border1"></div>
-<h1 id= "Title">Quiz Name</h1>
+<h1 id= "Title"></h1>
 <img id="pharm_logo" src="CU_pharm.png">
 
 <h2 id="existing_questions">Existing Questions</h2>
@@ -328,6 +328,17 @@ position:absolute;
 
 
 <script type="text/javascript">
+
+
+
+
+function load(){
+
+var w=localStorage.getItem("storageName");
+document.getElementById("Title").innerHTML="Quiz: "+ w;
+
+}
+
 
 function deleteQuestion(){
 var r = confirm("Are you sure you want to delete this question?");
@@ -438,3 +449,4 @@ function logout() {
 
 
 </html>
+
