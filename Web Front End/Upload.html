@@ -165,14 +165,17 @@ background-color: white;
 
 	position: absolute;
 	top:250px;
-	left:649px;
+	left:609px;
+	border-style: solid;
+	border-radius: 14px;
+	border-color: black;
 
 
 }
 label {
 	position:absolute;
-	top:246px;
-	left:593px;
+	top:249px;
+	left:555px;
     font-size: 1.25em;
     font-weight: 700;
     color: black;
@@ -192,8 +195,8 @@ label:hover{
 
 #UploadButton{
 position:fixed;
-left:650px;
-top:340px;
+left:665px;
+top:330px;
 width: 100px;
 	height: 40px;
 	border-radius: 14px;
@@ -205,6 +208,15 @@ width: 100px;
 }
 #UploadButton:hover{
 background-color: white;
+
+}
+
+#test{
+
+	position:absolute;
+	top:400px;
+	left:640px;
+
 
 }
 
@@ -241,14 +253,27 @@ background-color: white;
 <input type="file" name="file" id="file" class="inputfile" />
 <label for="file">Choose a file</label>
 
-<button id="UploadButton">Upload</button>
+<button id="UploadButton" onclick="uploadIt()">Upload</button>
+
+
+<p id="test"></p>
 
 
 </body>
 
 
 
+<script>
 
+function uploadIt(){
+	var z= document.getElementById("file").value;
+	document.getElementById("test").innerHTML= z;
+
+
+
+}
+
+</script>
 
 
 
