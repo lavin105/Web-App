@@ -303,6 +303,8 @@ background-color: white;
 
 <script type="text/javascript">
 
+
+
 function addQuiz(){
 
 
@@ -311,6 +313,7 @@ function addQuiz(){
 	var name=document.getElementById("inputQuiz").value;
 	 var option = document.createElement("option");
 	 option.text = name;
+	 
 	 if(name!=""){
 
 	 		var quiz_name={
@@ -320,6 +323,9 @@ function addQuiz(){
 	 };
 	 	x.appendChild(option);
 	 	console.log(quiz_name);
+	 	var getInput= document.getElementById("inputQuiz").value;
+	 	localStorage.setItem("storageName",getInput);
+	 	location.href="QuestionBank.html";
 	 }
 	 else{
 
