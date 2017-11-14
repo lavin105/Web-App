@@ -187,6 +187,21 @@
 </body>
 </html>
 
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAWJEhgK19vZkUH4jWRCmDnrmlrWycgPug",
+        authDomain: "cusp-quiz-app.firebaseapp.com",
+        databaseURL: "https://cusp-quiz-app.firebaseio.com",
+        projectId: "cusp-quiz-app",
+        storageBucket: "cusp-quiz-app.appspot.com",
+        messagingSenderId: "678976715567"
+    };
+    var app = firebase.initializeApp(config);
+    var db = app.database();
+</script>
+
 <script type="text/javascript">
     function submitQuestion() {
         var q = document.getElementById("Question").value;
@@ -198,9 +213,27 @@
         if(q == "" || a == "" || b == "" || c == "" || d == "") {
             alert("Please fill in the question and answer choices");
         } else {
-            alert("Storing question...");
+            // Import Admin SDK
+            //var admin = require("firebase-admin");
 
-            // store question data in firebase
+            // Get a database reference to our app
+
+            var ref = db.ref("Question");
+
+            ref.child("00003").set({
+                answers: {
+                    a: a,
+                    b: b,
+                    c: c,
+                    d: d,
+                },
+                answer: "A",
+                image: "null",
+                tags: "Pharm, Bio, Chem",
+                text: q
+            });
+
+            alert("Qustion stored");
         }
     }
 </script>
