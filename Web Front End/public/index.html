@@ -32,9 +32,6 @@ border-color:grey;
 position:fixed;
 left:-12px;
 top:-12px;
-
-
-
 }
 
 #pharm_logo{
@@ -54,8 +51,7 @@ width:1342px;
 position:fixed;
 top:-230px;
 left:12px;
-transform: skewY(5deg); 
-
+transform: skewY(5deg);
 
 }
 #question_bank{
@@ -91,9 +87,6 @@ list-style-type: none;
     padding: 0;
     width: 200px;
     background-color: #f1f1f1;
-
-
-
 }
 .nav {
     display: block;
@@ -103,9 +96,7 @@ list-style-type: none;
     border-width: 4px;
     border-style: solid;
     border-color: black;
-     
 }
-
 
 .nav:hover {
     background-color: #555;
@@ -162,26 +153,27 @@ background-color: white;
 
 }
 
-
-
-
-
 </style>
-
-
 
 <title>Home Page</title>
 </head>
-
-
+<!-- update the version number as needed -->
+<script defer src="/__/firebase/4.6.1/firebase-app.js"></script>
+<!-- include only the Firebase features as you need -->
+<script defer src="/__/firebase/4.6.1/firebase-auth.js"></script>
+<script defer src="/__/firebase/4.6.1/firebase-database.js"></script>
+<script defer src="/__/firebase/4.6.1/firebase-messaging.js"></script>
+<script defer src="/__/firebase/4.6.1/firebase-storage.js"></script>
+<!-- initialize the SDK after all desired features are loaded -->
+<script defer src="/__/firebase/init.js"></script>
 
 <body>
 
 <div id="slanted"></div>
-<img id="window" src="finestra_window.png">
+<img id="window" src="../finestra_window.png">
 <div id="border1"></div>
 <h1 id= "Title">Home</h1>
-<img id="pharm_logo" src="CU_pharm.png">
+<img id="pharm_logo" src="../CU_pharm.png">
 <h2 id= "question_bank">Question Bank</h2>
 <button onclick="toQuizQuestions()" id="toQuestionBank">Go</button>
 <h2 id= "Quiz_bank">Quiz Bank</h2>
