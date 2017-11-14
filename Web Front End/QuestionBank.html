@@ -105,8 +105,6 @@ list-style-type: none;
     border-color: black;
      
 }
-
-
 .nav:hover {
     background-color: #555;
     color: white;
@@ -135,43 +133,37 @@ width: 100px;
 
 }
 #toQuizzes:hover{
-background-color: white;
-
+  background-color: white;
 }
 #content{
-position:fixed;
-left:659px;
-top:440px;
-
+  position:fixed;
+  left:659px;
+  top:440px;
 }
 #toContent{
-position:fixed;
-left:650px;
-top:500px;
-width: 100px;
-	height: 40px;
-	border-radius: 14px;
-	border-color: red;
-	background-color: red;
-	font-family: "Lucida Console", Monaco, monospace;
-	font-weight: bold;
-
+  position:fixed;
+  left:650px;
+  top:500px;
+  width: 100px;
+  height: 40px;
+  border-radius: 14px;
+  border-color: red;
+  background-color: red;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-weight: bold;
 }
 #toContent:hover{
-background-color: white;
+  background-color: white;
 
 }
 #QuestionList{
-
 	position:fixed;
-	left:50px;
+	left:465px;
 	top:280px;
 	width:450px;
 	height: 200px;
 	border-radius: 3px;
 	border-width:4px;
-
-
 }
 .quest{
 
@@ -180,7 +172,6 @@ background-color: white;
 	border-width:1px;
 }
 option{
-
 	font-size: 125%;
 	border-style: solid;
 	border-width:1px;
@@ -188,20 +179,12 @@ option{
 }
 #existing_questions{
 position: fixed;
-top: 220px;
-left: 160px;
-
-}
-#addAQuestion{
-position: fixed;
-top: 240px;
-left: 780px;
-
+top: 215px;
+left: 585px;
 }
 #Edit{
-
 	position:fixed;
-	left:320px;
+	left:640px;
 	top:505px;
 	width: 104px;
 	height: 43px;
@@ -213,12 +196,10 @@ left: 780px;
 } 
 #Edit:hover{
 background-color: white;
-
 }
 #Delete{
-
 	position:fixed;
-	left:110px;
+	left:760px;
 	top:505px;
 	width: 104px;
 	height: 43px;
@@ -227,7 +208,7 @@ background-color: white;
 	background-color: red;
 	font-family: "Lucida Console", Monaco, monospace;
 	font-weight: bold;
-} 
+}
 #Delete:hover{
 background-color: white;
 
@@ -235,8 +216,8 @@ background-color: white;
 #Add{
 
 	position:fixed;
-	left:810px;
-	top:355px;
+	left:520px;
+	top:505px;
 	width: 104px;
 	height: 43px;
 	border-radius: 14px;
@@ -249,20 +230,6 @@ background-color: white;
 background-color: white;
 
 }
-#addQuest{
-position:absolute;
-	top:300px;
-	left:630px;
-	border-radius: 5px;
-	height: 35px;
-	width:485px;
-
-
-}
-
-
-
-
 
 </style>
 
@@ -300,32 +267,11 @@ position:absolute;
 <input id="addQuest" type="text" name="Quiz" placeholder="Quiz Name"></input>
 
 
-
-
 <ul id="navbar">
-  <li><a class="nav"  href="Home.html">Home</a></li>
+  <li><a class="nav"  href="index.html">Home</a></li>
   <li><a class="nav" href="javascript:logout();">Logout</a></li>
 </ul>
-
-
-
-
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script type="text/javascript">
 
@@ -337,95 +283,24 @@ var r = confirm("Are you sure you want to delete this question?");
     } else {
         return false
     }
-
-
-
-
-
-
-
-
 }
 
-
-function editQuestion(){
-
-
- var change = prompt("What would you like to change the question to?", "");
-    if (change != null) {
-        var x = document.getElementById("QuestionList");
-        x.remove(x.selectedIndex);
-        var option = document.createElement("option");
-	 	option.text = change;
-	 	x.appendChild(option);
-
-        
+function editQuestion() {
+    var list = document.getElementById("QuestionList");
+    if(list.selectedIndex != -1)
+    {
+        location.href="QuestionTemplate.html"
+    } else {
+        alert("Please select a question to edit");
     }
-
-
-
-
 }
-
 
 function addQuestion(){
-
-var x = document.getElementById("QuestionList");
-	var name=document.getElementById("addQuest").value;
-	 var option = document.createElement("option");
-	 option.text = name;
-	 if(name!=""){
-
-	 		var question_name={
-
-	 	name: name
-
-	 };
-	 	x.appendChild(option);
-	 	console.log(question_name);
-	 	
-
-	 }
-	 else{
-
-	 	alert("Must Enter the Question!");
-	 }
-
-
-
+  location.href="QuestionTemplate.html"
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function toQuizQuestions(){
-
-location.href="QuestionBank.html";
-
-
+  location.href="QuestionBank.html";
 }
 
 function logout() {

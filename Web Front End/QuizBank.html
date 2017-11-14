@@ -189,7 +189,7 @@ option{
 #submit{
 
 	position:fixed;
-	left:630px;
+	left:570px;
 	top:455px;
 	width: 104px;
 	height: 43px;
@@ -202,6 +202,21 @@ option{
 #submit:hover{
 background-color: white;
 
+}
+#edit{
+  position:fixed;
+  left:695px;
+  top:455px;
+  width: 104px;
+  height: 43px;
+  border-radius: 14px;
+  border-color: red;
+  background-color: red;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-weight: bold;
+}
+#edit:hover{
+  background-color: white;
 }
 #AddQuiz{
 
@@ -266,13 +281,17 @@ background-color: white;
   <option class="quizNum" >Quiz 5</option>
 </select>
 <button id="submit" onclick="selectQuiz()">Submit</button>
+<button id="edit" onclick="editQuiz()">Edit</button>
+
+
+
 
 
 
 
 
 <ul id="navbar">
-  <li><a class="nav"  href="Home.html">Home</a></li>
+  <li><a class="nav"  href="index.html">Home</a></li>
   <li><a class="nav" id="current"  href="QuizBank.html">Quiz Bank</a></li>
   <li><a class="nav" href="javascript:logout();">Logout</a></li>
 
@@ -356,28 +375,28 @@ function selectQuiz(){
 	}
 	if(document.getElementById("QuizList").selectedIndex==1)
 	{
-		location.href="Home.html";
+		location.href="index.html";
 	}
 	if(document.getElementById("QuizList").selectedIndex==2)
 	{
-		location.href="Home.html";
+		location.href="index.html";
 	}
 	if(document.getElementById("QuizList").selectedIndex==3)
 	{
-		location.href="Home.html";
+		location.href="index.html";
 	}
 	if(document.getElementById("QuizList").selectedIndex==4)
 	{
-		location.href="Home.html";
+		location.href="index.html";
 	}
 	if(document.getElementById("QuizList").selectedIndex==5)
 	{
-		location.href="Home.html";
+		location.href="index.html";
 	}
+}
 
-	
-
-	
+function editQuiz() {
+    location.href="QuestionBank.html";
 }
 function logout() {
   if (confirm("Are you sure you want to logout?")) {
