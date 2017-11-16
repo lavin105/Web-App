@@ -188,18 +188,19 @@
 </html>
 
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
 <script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyAWJEhgK19vZkUH4jWRCmDnrmlrWycgPug",
-        authDomain: "cusp-quiz-app.firebaseapp.com",
-        databaseURL: "https://cusp-quiz-app.firebaseio.com",
-        projectId: "cusp-quiz-app",
-        storageBucket: "cusp-quiz-app.appspot.com",
-        messagingSenderId: "678976715567"
-    };
-    var app = firebase.initializeApp(config);
-    var db = app.database();
+    //const firebase = require("firebase");
+    //require("firebase/firestore");
+
+    firebase.initializeApp({
+        apiKey: 'AIzaSyAWJEhgK19vZkUH4jWRCmDnrmlrWycgPug',
+        authDomain: 'cusp-quiz-app.firebaseapp.com',
+        projectId: 'cusp-quiz-app'
+    });
+
+    // Initialize Cloud Firestore through Firebase
+    var db = firebase.firestore();
 </script>
 
 <script type="text/javascript">
@@ -213,20 +214,25 @@
         if(q == "" || a == "" || b == "" || c == "" || d == "") {
             alert("Please fill in the question and answer choices");
         } else {
-            var ref = db.ref("Question");
-
-            ref.child("00003").set({
-                answers: {
-                    a: a,
-                    b: b,
-                    c: c,
-                    d: d,
-                },
-                answer: "A",
+            // Add a second document with a generated ID.
+            db.collection("questionBanks").doc("Cd0qAyYY2FlEPRh9exmo")
+                .collection("questions").add({
+                answers: [
+                    a,
+                    b,
+                    c,
+                    d
+                ],
+                correctAnswer: 0,
                 image: "null",
-                tags: "Pharm, Bio, Chem",
                 text: q
-            });
+            })
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
 
             alert("Qustion stored");
             location.href="QuestionBank.html"
