@@ -213,11 +213,6 @@
         if(q == "" || a == "" || b == "" || c == "" || d == "") {
             alert("Please fill in the question and answer choices");
         } else {
-            // Import Admin SDK
-            //var admin = require("firebase-admin");
-
-            // Get a database reference to our app
-
             var ref = db.ref("Question");
 
             ref.child("00003").set({
@@ -234,6 +229,7 @@
             });
 
             alert("Qustion stored");
+            location.href="QuestionBank.html"
         }
     }
 </script>
