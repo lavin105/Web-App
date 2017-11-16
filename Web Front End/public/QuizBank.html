@@ -322,10 +322,9 @@ background-color: white;
 
 <script type="text/javascript">
 
+
+
 function addQuiz(){
-
-
-
 	var x = document.getElementById("QuizList");
 	var name=document.getElementById("inputQuiz").value;
 	 var option = document.createElement("option");
@@ -338,22 +337,19 @@ function addQuiz(){
 
 	 };
 	 	x.appendChild(option);
+         var getInput= document.getElementById("inputQuiz").value;
+         localStorage.setItem("storageName",getInput);
+         location.href="QuestionBank.html";
 	 	console.log(quiz_name);
 	 }
 	 else{
 
 	 	alert("Must Enter the Quiz Name!");
 	 }
-	 
-
-
 
 	// var database= firebase.dataase();
 	//var ref=database.ref('Quiz_List');
 	//ref.push(quiz_name);
-
-	 
-
 
 }
 
